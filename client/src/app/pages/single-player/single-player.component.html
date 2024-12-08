@@ -1,0 +1,65 @@
+<div class="container mx-auto p-4 bg-white rounded-lg">
+    <!-- Player Image and Details -->
+    <div class="flex flex-col md:flex-row items-center p-4 bg-gradient-to-r from-gray-900 to-blue-600 rounded-lg shadow-lg">
+        <img [src]="currImgPath" alt="Player Image" class="h-44 w-44 rounded-full mb-4 md:mb-0 md:mr-6 border-4 border-white shadow-lg">
+        <div class="text-center md:text-left text-white">
+            <h2 class="text-3xl font-bold">{{ player.name }}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div>
+                    <p class="text-white text-lg">{{ player.sport }}</p>
+                    <p class="text-white">Age - {{ player.age }} years old</p>
+                    <p class="text-white">Status - {{ player.status }}</p>
+                </div>
+                <div>
+                    <p class="text-white">Position - {{ player.position }}</p>
+                    <p class="text-white">Country - {{ player.country }}</p>
+                    <button *ngIf="player.status == 'Sold' && (Role == 'Admin' || Role == 'Team Manager' || Role == 'Player Agent')" 
+                        type="button" (click) = "downloadContract()"
+                        class="px-3 mt-3 py-2 flex items-center justify-start  rounded-xl text-gray-800 bg-white/90 text-sm tracking-wider  font-medium border-none outline-none  hover:bg-white/80 active:bg-white/80">
+                        View Contract
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16px" fill="currentColor" class="ml-2 inline" viewBox="0 0 24 24">
+                        <path
+                            d="M12 16a.749.749 0 0 1-.542-.232l-5.25-5.5A.75.75 0 0 1 6.75 9H9.5V3.25c0-.689.561-1.25 1.25-1.25h2.5c.689 0 1.25.561 1.25 1.25V9h2.75a.75.75 0 0 1 .542 1.268l-5.25 5.5A.749.749 0 0 1 12 16zm10.25 6H1.75C.785 22 0 21.215 0 20.25v-.5C0 18.785.785 18 1.75 18h20.5c.965 0 1.75.785 1.75 1.75v.5c0 .965-.785 1.75-1.75 1.75z"
+                            data-original="#000000" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Performance Reports Table -->
+    <div class="mt-6 overflow-x-auto">
+        <table class="min-w-full bg-white shadow-md rounded-lg  border-spacing-2">
+            <thead class="bg-gray-900 text-white">
+                <tr>
+                    <th class="px-6 py-3 rounded-tl-lg">Match Date</th>
+                    <th class="px-6 py-3">Tournament</th>
+                    <!-- <th class="px-6 py-3">Sport</th> -->
+                    <th class="px-6 py-3">Opponent</th>
+                    <th class="px-6 py-3">Match Type</th>
+                    <th class="px-6 py-3">{{stats1}}</th>
+                    <th class="px-6 py-3">{{stats2}}</th>
+                    <th class="px-6 py-3">{{stats3}}</th>
+                    <th class="px-6 py-3">{{stats4}}</th>
+                    <th class="px-6 py-3 rounded-tr-lg">Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let report of reports" class="odd:bg-gray-100 even:bg-white hover:bg-gray-200">
+                    <td class="border border-gray-300 px-4 py-4">{{ report.matchDate | date:'shortDate' }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.tournament }}</td>
+                    <!-- <td class="border border-gray-300 px-4 py-4">{{ report.sport }}</td> -->
+                    <td class="border border-gray-300 px-4 py-4">{{ report.opponent }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.matchType }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.stats1 }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.stats2 }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.stats3 }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.stats4 }}</td>
+                    <td class="border border-gray-300 px-4 py-4">{{ report.rating }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

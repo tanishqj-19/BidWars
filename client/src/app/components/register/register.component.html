@@ -1,0 +1,152 @@
+
+
+<section class=" bg-white/5 max-h-[80%]:">
+  <div class="flex justify-center min-h-screen">
+    <div 
+  class="hidden bg-no-repeat bg-center lg:block lg:w-2/5" 
+  style="background-image: url('assets/second.jpg'); background-size: cover; background-position: center;">
+</div>
+
+      <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
+          <div class="w-full">
+              <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize e">
+                  Welcome to BidWars!
+              </h1>
+
+              <p class="mt-4 text-gray-500 ">
+                  Let’s get you all set up so you can verify your personal account and begin setting up your profile.
+              </p>
+
+              <div class="mt-6">
+                <h1 class="text-gray-800 text-center">Select type of account</h1>
+              
+                <!-- role selection buttons -->
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+                  <!-- Team Manager -->
+                  <button
+                    class="flex items-center justify-center w-full px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-emerald-600 focus:outline-none"
+                    (click)="selectRole('Team Manager')"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Team Manager</span>
+                  </button>
+              
+                  <!-- Auctioneer -->
+                  <button
+                    class="flex items-center justify-center w-full px-6 py-3 text-green-600 border border-green-600 rounded-lg hover:bg-green-100 focus:outline-none"
+                    (click)="selectRole('Auctioneer')"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>Auctioneer</span>
+                  </button>
+              
+                  <!-- Viewer -->
+                  <button
+                    class="flex items-center justify-center w-full px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-emerald-600 focus:outline-none"
+                    (click)="selectRole('Viewer')"
+                  >
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Viewer</span>
+                  </button>
+              
+                  <!-- Player Agent -->
+                  <button
+                    class="flex items-center justify-center w-full px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-emerald-600 focus:outline-none"
+                    (click)="selectRole('Player Agent')"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Player Agent</span>
+                  </button>
+              
+                  <!-- Admin -->
+                  <button
+                    class="flex items-center justify-center w-full px-6 py-3 text-green-600 border border-green-600 rounded-lg hover:bg-green-100 focus:outline-none"
+                    (click)="selectRole('Admin')"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>Admin</span>
+                  </button>
+              
+                  <!-- Analyst -->
+                  <button
+                    class="flex items-center justify-center w-full px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-emerald-600 focus:outline-none"
+                    (click)="selectRole('Analyst')"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Analyst</span>
+                  </button>
+                </div>
+              </div>
+              
+
+              <form class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2" 
+              [formGroup]="registerForm"  (ngSubmit)="signUp()">
+                  <div>
+                      <label class="block mb-2 text-sm text-gray-600 ">First Name</label>
+                      
+                      <input type="text" placeholder="John" [formControl]="firstName" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-green-400  focus:ring-green-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                      <div *ngIf="firstName.invalid && firstName.touched" class="text-red-500">First Name is required.</div>
+                  </div>
+
+                  <div>
+                      <label class="block mb-2 text-sm text-gray-600 ">Last name</label>
+                      <input type="text" placeholder="Snow" [formControl]="lastName" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-green-400 :focus:border-green-400 focus:ring-green-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                      <div *ngIf="lastName.invalid && lastName.touched" class="text-red-500">Last Name is required.</div>
+
+                  </div>
+
+
+                  <div>
+                      <label class="block mb-2 text-sm text-gray-600 0">email address</label>
+                      <input type="email"  [formControl]="email" placeholder="johnsnow@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-green-400 focus:ring-green-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                      <div *ngIf="email?.invalid && email?.touched" class="text-red-500">Enter a valid email address.</div>
+                  </div>
+
+                  <div>
+                      <label class="block mb-2 text-sm text-gray-600 ">password</label>
+                      <input type="password" [formControl] = "password"
+                      placeholder="Enter your password" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-green-400  focus:ring-green-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                      <div *ngIf="password.invalid && password.touched" class="text-red-500">password is required.</div>
+
+                  </div>
+
+                
+
+                  <button
+                      class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-600 rounded-lg hover:bg-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50">
+                      <span>Sign Up </span>
+
+                      <svg *ngIf = "!isLoading;else spinner"
+                      xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                              clip-rule="evenodd" />
+                      </svg>
+
+                      <ng-template #spinner>
+                        <svg r xmlns="http://www.w3.org/2000/svg" class="w-5 animate-[spin_0.8s_linear_infinite] fill-white block rtl:-scale-x-100"
+                          viewBox="0 0 24 24">
+                          <path
+                            d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
+                            data-original="#000000" />
+                        </svg>
+                      </ng-template>
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>

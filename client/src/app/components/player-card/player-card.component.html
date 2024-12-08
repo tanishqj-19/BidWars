@@ -1,0 +1,17 @@
+<div (click)="toggleCard()" class="w-[90%] mx-auto bg-gray-200 max-w-xs overflow-hidden rounded-lg shadow-lg mb-6 hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+    <a [href]="urlPath">
+        <div class="relative">
+            <img class="rounded-t-lg object-center w-full h-72" [src]="imgpath" alt="Player Image">
+            <div class="absolute inset-0 bg-black opacity-20 rounded-t-lg"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <h2 class="text-2xl font-bold">{{player.name}}</h2>
+                <p class="text-sm">{{player.position}}</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- <div class="py-5 text-center">
+        <a [href]="urlPath" class="block text-xl font-bold text-gray-800 hover:text-blue-500 transition-colors duration-300" tabindex="0">{{player.name}}</a>
+        <span class="block text-sm text-gray-700">{{player.position}}</span>
+    </div> -->
+</div>
