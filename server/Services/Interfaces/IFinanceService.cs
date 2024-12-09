@@ -10,5 +10,6 @@ namespace server.Services.Interfaces
         Task<decimal> GetTeamExpenditureAsync(int teamId);
         Task<decimal> GetRemainingBudgetAsync(int teamId);
         Task LogTransaction(int teamId, string transactionType, decimal amount);
+        Task<IEnumerable<Finance>> GetAllFinances();
     }
 }

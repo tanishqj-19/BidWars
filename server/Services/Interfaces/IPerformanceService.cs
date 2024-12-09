@@ -11,6 +11,7 @@ namespace server.Services.Interfaces
 
         Task RemovePerformanceReportByPlayer(int playerId);
 
+        Task<IEnumerable<PerformanceReport>> GetAllPerformances();
         Task RemoveSinglePerformanceReport(int reportId);
     }
 }

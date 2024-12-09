@@ -27,6 +27,14 @@ namespace server.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Bid>>> GetAllBids()
+        {
+            var bids = await bidService.GetAllBids();
+
+            return Ok(bids);
+        }
+
         [HttpGet("highest/{auctionId}/{playerId}")]
         [Authorize]
         public async Task<IActionResult> GetHighestBid(int auctionId, int playerId)

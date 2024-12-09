@@ -264,6 +264,26 @@
   },
   {
     "ContainingType": "server.Controllers.BidController",
+    "Method": "GetAllBids",
+    "RelativePath": "api/Bid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[server.Models.Bid, server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "server.Controllers.BidController",
     "Method": "GetBidById",
     "RelativePath": "api/Bid/{id}",
     "HttpMethod": "GET",
@@ -378,6 +398,26 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[server.Models.Notification, server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "server.Controllers.PerformanceReportController",
+    "Method": "GetAllReports",
+    "RelativePath": "api/PerformanceReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[server.Models.PerformanceReport, server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -718,6 +758,26 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[server.Models.Player, server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "server.Controllers.FinanceController",
+    "Method": "GetAllFinances",
+    "RelativePath": "finances",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[server.Models.Finance, server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

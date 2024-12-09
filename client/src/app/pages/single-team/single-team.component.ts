@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { TeamService } from '../../services/team.service';
 import { Team } from '../../../models/team';
 import { CurrencyPipe, DatePipe, NgFor, NgIf } from '@angular/common';
-import { Player } from '../../../models/Player';
-import { PlayerService } from '../../services/player.service';
 import { PlayerCardComponent } from '../../components/player-card/player-card.component';
 import { Finance } from '../../../models/Finance';
 @Component({

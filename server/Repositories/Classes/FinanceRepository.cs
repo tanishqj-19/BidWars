@@ -26,6 +26,11 @@ namespace server.Repositories.Classes
             return await _context.Finances.FindAsync(financeId);
         }
 
+        public async Task<IEnumerable<Finance>> GetAllFinances()
+        {
+            return await _context.Finances.ToListAsync();
+        }
+
         public async Task AddFinance(Finance finance)
         {
             await _context.Finances.AddAsync(finance);

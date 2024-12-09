@@ -8,6 +8,7 @@ import { catchError, throwError, tap } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { PlayerService } from '../../services/player.service';
 import { Player } from '../../../models/Player';
+import { Router } from '@angular/router';
 
 
 
@@ -45,6 +46,7 @@ export class CreateAuctionComponent implements OnInit {
   errorMessage: string = "";
 
   constructor(
+    private router : Router,
     private auctionService: AuctionService, 
     private signalRHub: AuctionHubService,
     private authService: AuthService , private playerServices : PlayerService
@@ -60,17 +62,7 @@ export class CreateAuctionComponent implements OnInit {
 
   }
 
-  // updateAuctionPlayer(event: Event): void {
-  //   const selectElement = event.target as HTMLSelectElement; // Cast to HTMLSelectElement
-  //   const selectedPlayerId = Number(selectElement.value); // Get the player ID as number
   
-  //   const selectedPlayer = this.players.find(player => player.playerId == selectedPlayerId);
-  //   if (selectedPlayer) {
-  //     this.auction.playerId = selectedPlayer.playerId;
-  //     this.auction.sport = selectedPlayer.sport;
-  //     console.log('Auction updated:', this.auction);
-  //   }
-  // }
 
   onPlayerChange(event: Event): void {
     const selectedPlayerId = (event.target as HTMLSelectElement).value;
@@ -90,7 +82,7 @@ export class CreateAuctionComponent implements OnInit {
       startTime: new Date(),
       endTime: new Date(),
       status: 'Pending',
-      playerId: 0,
+      playerId: this.players[0].playerId,
     };
     this.errorMessage = "";
     this.isSubmitting = false;
@@ -151,7 +143,8 @@ export class CreateAuctionComponent implements OnInit {
     await this.signalRHub.createAuction(this.auction).pipe(
       tap(auc => {
         console.log(auc);
-        this.signalRHub.joinAuction(auc.auctionId ?? 0).subscribe();
+
+        this.signalRHub.joinAuction(auc.auctionId ?? 0);
         
         
         this.showForm = false;
@@ -166,6 +159,11 @@ export class CreateAuctionComponent implements OnInit {
         return throwError(error);
       })
     ).subscribe();
+   
+    await setTimeout(()=> {}, 2000)
+   await this.router.navigate(['/auction']).then(() => {
+      location.reload(); 
+    });
   }
 
   

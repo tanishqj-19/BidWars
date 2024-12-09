@@ -7,7 +7,7 @@ namespace server.Repositories.Interfaces
     {
 
         Task<IEnumerable<PerformanceReport>> GetPerformanceReportsByPlayerId(int playerId);
-
+        Task<IEnumerable<PerformanceReport>> GetAllPerformances();
         Task AddPerformanceReport(PerformanceReport newReport);
 
         Task UpdatePerformanceReport(PerformanceReport newReport);

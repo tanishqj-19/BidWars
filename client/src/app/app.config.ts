@@ -7,5 +7,5 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),  provideHttpClient(), provideClientHydration(), provideCharts(withDefaultRegisterables())]
+  providers: [provideRouter(routes),  provideHttpClient(), provideClientHydration(), provideCharts(withDefaultRegisterables()), provideCharts(withDefaultRegisterables())]
 };

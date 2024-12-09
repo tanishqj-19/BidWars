@@ -62,5 +62,10 @@ export class PlayerService {
     return this.httpClient.get<Contract>(urlPath, this.options);
   }
 
+  getAllPerformances() : Observable<PerformanceReport[]>{
+    const path = `https://localhost:7061/api/PerformanceReport`
+    return this.httpClient.get<PerformanceReport[]>(path, this.options);
+  }
+
   
 }

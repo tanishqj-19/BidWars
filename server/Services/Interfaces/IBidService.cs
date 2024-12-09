@@ -12,5 +12,7 @@ namespace server.Services.Interfaces
         //Task<IEnumerable<AuctionResult>> GenerateAuctionResultsAsync(int auctionId);
         Task<Bid> GetHighestBid(int auctionId, int playerId);
         Task ClosePlayerAuction(Auction auction);
+
+        Task<IEnumerable<Bid>> GetAllBids();
     }
 }

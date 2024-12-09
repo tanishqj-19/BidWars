@@ -156,6 +156,7 @@ D:\Capstone\server\obj\Debug\net8.0\server.AssemblyInfo.cs
 D:\Capstone\server\obj\Debug\net8.0\server.csproj.CoreCompileInputs.cache
 D:\Capstone\server\obj\Debug\net8.0\server.MvcApplicationPartsAssemblyInfo.cs
 D:\Capstone\server\obj\Debug\net8.0\server.MvcApplicationPartsAssemblyInfo.cache
+D:\Capstone\server\obj\Debug\net8.0\server.sourcelink.json
 D:\Capstone\server\obj\Debug\net8.0\staticwebassets.build.json
 D:\Capstone\server\obj\Debug\net8.0\staticwebassets.development.json
 D:\Capstone\server\obj\Debug\net8.0\staticwebassets\msbuild.server.Microsoft.AspNetCore.StaticWebAssets.props
@@ -170,4 +171,3 @@ D:\Capstone\server\obj\Debug\net8.0\refint\server.dll
 D:\Capstone\server\obj\Debug\net8.0\server.pdb
 D:\Capstone\server\obj\Debug\net8.0\server.genruntimeconfig.cache
 D:\Capstone\server\obj\Debug\net8.0\ref\server.dll
-D:\Capstone\server\obj\Debug\net8.0\server.sourcelink.json

@@ -6,6 +6,7 @@ namespace server.Repositories.Interfaces
     {
 
         Task<Bid?> GetBidById(int bidId);
+        Task<IEnumerable<Bid>> GetAllBids();
         Task<IEnumerable<Bid>> GetBidsByAuctionId(int auctionId);
         Task<IEnumerable<Bid>> GetBidsByPlayerId(int playerId);
         Task AddBid(Bid bid);

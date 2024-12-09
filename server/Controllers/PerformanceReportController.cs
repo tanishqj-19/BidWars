@@ -21,7 +21,12 @@ namespace server.Controllers
             this.performanceService = performanceService;
             //_mapper = mapper;
         }
-
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<PerformanceReport>>> GetAllReports()
+        {
+            var per = await performanceService.GetAllPerformances();
+            return Ok(per) ;
+        }
         [HttpGet("{playerId}")]
         [Authorize]
         public async Task<ActionResult<IEnumerable<PerformanceReport>>> GetPlayerReports(int playerId)

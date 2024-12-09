@@ -8,8 +8,9 @@ import { TeamsComponent } from './pages/teams/teams.component';
 import { authGuard } from './services/auth.guard';
 import { SingleTeamComponent } from './pages/single-team/single-team.component';
 import { SinglePlayerComponent } from './pages/single-player/single-player.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SportsDashboardComponent } from './pages/sports-dashboard/sports-dashboard.component';
 
 export const routes: Routes = [
 
@@ -20,7 +21,7 @@ export const routes: Routes = [
     {path: 'teams', component: TeamsComponent, canActivate: [authGuard]},
     {path: 'teams/:id', component : SingleTeamComponent},
     {path: 'players/:id', component : SinglePlayerComponent},
-    {path: 'dashboard', component : DashboardComponent, canActivate: [authGuard]},
+    {path: 'dashboard', component : SportsDashboardComponent, canActivate: [authGuard]},
     {path: '', component: HomeComponent},
     {path: '**',component : NotFoundComponent}
     

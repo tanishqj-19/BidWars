@@ -20,7 +20,10 @@ namespace server.Services.Classes
 
             return await performanceRepository.GetPerformanceReportsByPlayerId(playerId);
         }
-
+        public async Task<IEnumerable<PerformanceReport>> GetAllPerformances()
+        {
+            return await performanceRepository.GetAllPerformances();
+        }
         public async Task AddPerformanceReport(PerformanceReport report)
         {
             if (report == null)

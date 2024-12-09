@@ -1,43 +1,59 @@
-<div>
+<div class="min-h-[100vh] bg-gradient-to-r from-blue-100 to-blue-200">
 
-    <div class="flex flex-row items-center justify-between mb-5">
+    <div class="flex flex-row items-center justify-between mb-8">
        
-        <h2 class="ml-3 leading-normal px-1 text-center text-3xl my-4 bg-gradient-to-r from-sky-600  to-cyan-500  bg-clip-text text-transparent font-semibold ">Players Available</h2>
+        <h2 class="ml-3 leading-normal px-1 text-center text-3xl my-4 text-blue-900 font-semibold ">Players Available</h2>
         
 
-        <div class="flex h-12 items-center justify-between space-x-3 mt-4 mr-3">
+        <div class="flex h-12 items-center justify-between space-x-8 mt-4 mr-3">
 
-          <div class="flex rounded-full shadow-md  overflow-hidden max-w-md mx-auto font-[sans-serif]">
+          <!-- <div class="flex rounded-full shadow-md  overflow-hidden max-w-md mx-auto font-[sans-serif]">
             <input type="text" [(ngModel)] = "searchText" placeholder="Search Something..."
-              class="w-full outline-none bg-white text-sm px-4 py-2 border border-gray-200" />
+              class="w-full outline-none bg-blue-50  text-sm px-4 py-2 border border-gray-200" />
             <button (click) = "search()"
-             type='button' class="flex items-center justify-center bg-blue-800 hover:bg-blue-800 px-3">
+             type='button' class="flex  items-center justify-center bg-blue-800 hover:bg-blue-800 px-3">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="18px" class="fill-white">
                 <path
                   d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
                 </path>
               </svg>
             </button>
+          </div> -->
+
+
+          <div class=" pt-2 relative mx-auto text-gray-600">
+            <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+              type="search" name="search" [(ngModel)] = "searchText" placeholder="Search">
+            <button (click) = "search()" type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+              <svg class=" text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                width="512px" height="512px">
+                <path
+                  d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+              </svg>
+            </button>
           </div>
 
 
-            <div class="flex justify-center mr-3">
-              <div class="relative inline-block w-40">
-                <select 
-                  id="sport-select" 
-                  (change)="onSportChange($event)" 
-                  class="block w-full outline-none focus:online-none appearance-none bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded-xl shadow focus:outline-none focus:ring-2 ">
-                  <option value="" disabled selected>Filter by Sport</option>
-                  <option value="Cricket">Cricket</option>
-                  <option value="Football">Football</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                  <svg class="w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
-                </div>
+          <div class="flex justify-center items-center mr-3">
+            <div class="relative inline-block w-48">
+              <select 
+                id="sport-select" 
+                (change)="onSportChange($event)" 
+                class="block w-full outline-none appearance-none bg-blue-50 border border-gray-300 text-gray-700 py-2 px-3 pr-10 rounded-lg shadow-sm hover:border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-150 ease-in-out">
+                <option value="" disabled selected>Filter by Sport</option>
+                <option value="Cricket">Cricket</option>
+                <option value="Football">Football</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
               </div>
             </div>
+          </div>
+          
 
             
         </div>

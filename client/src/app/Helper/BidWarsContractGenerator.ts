@@ -50,15 +50,7 @@ export class BidWarsContractGenerator{
       const marginLeft = 15;
       let currentY = 20;
   
-      // Add Logo
-    //   try {
-    //     const logoWidth = 60; // Increased width
-    //     const logoHeight = 30; // Proportional height
-
-    //     doc.addImage(this.LOGO_PATH, 'PNG', 8, 8, logoWidth, logoHeight);
-    //   } catch (error) {
-    //     console.warn('Logo could not be added:', error);
-    //   }
+    
   
       // Corporate Header
       doc.setFillColor(33, 150, 243); // Material Blue

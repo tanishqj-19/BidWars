@@ -32,6 +32,13 @@ namespace server.Controllers
             }
         }
 
+        [HttpGet("/finances")]
+        public async Task<ActionResult<IEnumerable<Finance>>> GetAllFinances()
+        {
+            var finances = await _financeService.GetAllFinances();
+            return Ok(finances);
+        }
+
         //[HttpGet]
         //public async Task<IActionResult<>>
         //[HttpPost]

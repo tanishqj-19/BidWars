@@ -28,6 +28,10 @@ namespace server.Repositories.Classes
 
             await _context.SaveChangesAsync();
         }
+        public async Task<IEnumerable<PerformanceReport>> GetAllPerformances()
+        {
+            return await _context.PerformanceReports.ToListAsync();
+        }
 
 
 

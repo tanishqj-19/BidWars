@@ -59,6 +59,11 @@ namespace server.Services.Classes
             return await _financeRepository.GetRemainingBudget(teamId);
         }
 
+        public async Task<IEnumerable<Finance>> GetAllFinances()
+        {
+            return await _financeRepository.GetAllFinances();
+        }
+
         public async Task LogTransaction(int teamId, string transactionType, decimal amount)
         {
             var financelog = new Finance
@@ -72,5 +77,7 @@ namespace server.Services.Classes
 
             await AddFinanceAsync(financelog);
         }
+
+        
     }
 }

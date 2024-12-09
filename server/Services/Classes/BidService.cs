@@ -234,8 +234,15 @@ namespace server.Services.Classes
 
             }
 
+
+
         }
 
-       
+        public async Task<IEnumerable<Bid>> GetAllBids()
+        {
+            return await _bidRepository.GetAllBids();
+        }
+
+
     }
 }

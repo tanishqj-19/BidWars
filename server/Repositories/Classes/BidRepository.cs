@@ -84,5 +84,10 @@ namespace server.Repositories.Classes
             await _context.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<Bid>> GetAllBids()
+        {
+            return await _context.Bids.ToListAsync();
+        }
+
     }
 }

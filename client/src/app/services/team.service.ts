@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Team } from '../../models/team';
 import { Player } from '../../models/Player';
 import { Finance } from '../../models/Finance';
+import { Bid } from '../../models/Bid';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,16 @@ export class TeamService {
   getTeamFinances(teamId : number) : Observable<Finance[]>{
     const urlPath = `https://localhost:7061/api/Finance/team/${teamId}`;
     return this.httpClient.get<Finance[]>(urlPath, this.options);
+  }
+
+  getAllFinances() : Observable<Finance[]>{
+    const urlPath = `https://localhost:7061/finances`;
+    return this.httpClient.get<Finance[]>(urlPath, this.options);
+  }
+
+  getAllBids() : Observable<Bid[]>{
+    const urlPath = 'https://localhost:7061/api/Bid';
+
+    return this.httpClient.get<Bid[]>(urlPath, this.options);
   }
 }

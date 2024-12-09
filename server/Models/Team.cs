@@ -33,7 +33,8 @@ namespace server.Models
 
         
         public decimal TotalExpenditure { get; set; } = 0;
-        
+
+        [JsonIgnore]
         public User Manager { get; set; }
 
         [JsonIgnore]

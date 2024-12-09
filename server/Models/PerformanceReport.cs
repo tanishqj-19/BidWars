@@ -1,4 +1,6 @@
-﻿namespace server.Models
+﻿using System.Text.Json.Serialization;
+
+namespace server.Models
 {
     public class PerformanceReport
     {
@@ -18,7 +20,12 @@
 
         public double Rating { get; set; } // Performance rating out of 10
         public int AnalystId { get; set; }  // FK to User (Analyst) = 
+
+        [JsonIgnore]
         public Player Player { get; set; }
+
+        [JsonIgnore]
+
         public User Analyst { get; set; }
     }
 }

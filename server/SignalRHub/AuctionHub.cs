@@ -66,7 +66,16 @@ namespace server.SignalRHub
                 var newAuction = await _auctionService.AddAuction(auction);
 
                 // Broadcast new auction to all clients
-                await Clients.All.SendAsync("ReceiveNewAuction", newAuction);
+                await Clients.All.SendAsync("ReceiveNewAuction", new {
+                    AuctionId = newAuction.AuctionId,
+                    Auctioneer = newAuction.Auctioneer,
+                    PlayerId = newAuction.PlayerId,
+                    EndTime = newAuction.EndTime,
+                    StartTime = newAuction.StartTime,
+                    Sport = newAuction.Sport,
+                    Date = newAuction.Date,
+                    Status = newAuction.Status
+                });
             }
             catch (Exception ex)
             {

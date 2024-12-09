@@ -1,69 +1,96 @@
-<div class="bg-gray-200 min-h-[100vh] mx-0">
-    <div class="container   text-white">
-        <div class="bg-blue-700  p-4  mx-auto w-full">
+<div class="bg-gray-200 min-h-[100vh] mx-auto">
+    <div class=" text-white">
+        <div class="bg-blue-700 p-4 mx-auto w-full">
             <div class="flex flex-col md:flex-row items-center mt-1">
-                <img [src]="currImgPath" alt="Chennai Super Kings Logo" class="h-52 w-56 rounded-md mr-0 md:mr-5 mb-4 md:mb-0">
+                <img 
+                    [src]="currImgPath" 
+                    alt="Chennai Super Kings Logo" 
+                    class="h-52 w-56 rounded-md mr-0 md:mr-5 mb-4 md:mb-0"
+                >
                 <div class="text-center md:text-left ml-0 md:ml-4">
-                    <h1 class="text-3xl font-bold">{{currTeam.name}}</h1>
+                    <h1 class="text-3xl font-bold">{{ currTeam.name }}</h1>
                     <div class="flex justify-center md:justify-start items-center mt-2">
                         <span class="text-yellow-400 text-xl mr-2">🏆</span>
                         <span>2010, 2011, 2018, 2021, 2023</span>
                     </div>
-                    <a href="https://www.iplt20.com/teams" class="mt-2 inline-block bg-gradient-to-r from-orange-400 to-orange-600 text-white py-2 px-4 rounded">Official Team Site</a>
+                    <a 
+                        href="https://www.iplt20.com/teams" 
+                        class="mt-2 inline-block bg-gradient-to-r from-orange-400 to-orange-600 text-white py-2 px-4 rounded"
+                    >
+                        Official Team Site
+                    </a>
                 </div>
             </div>
         </div>
+
         <div class="mt-4 p-4">
             <div class="bg-blue-800 p-4 rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-                    <div><span class="font-bold">Owner</span> - {{currTeam.name}} Ltd.</div>
-                    <div><span class="font-bold">Budget</span> - {{currTeam.budget | currency:'INR':'symbol'}}</div>
-                    <div><span class="font-bold">Sport</span> - {{currTeam.sport}}</div>
-                    <div><span class="font-bold">Region</span> - {{currTeam.region}}</div>
+                    <div><span class="font-bold">Owner</span> - {{ currTeam.name }} Ltd.</div>
+                    <div><span class="font-bold">Budget</span> - {{ currTeam.budget | currency:'INR':'symbol' }}</div>
+                    <div><span class="font-bold">Sport</span> - {{ currTeam.sport }}</div>
+                    <div><span class="font-bold">Region</span> - {{ currTeam.region }}</div>
                 </div>
             </div>
         </div>
+
         <div class="mt-4 flex justify-center space-x-4 p-4">
-            <button (click)="toggleView('squad')" class="bg-gradient-to-r from-blue-800 to-blue-950 py-2 px-4 rounded-md text-white ">Squad</button>
-            <button (click)="toggleView('finance')" class="bg-gradient-to-r from-blue-800 to-blue-950 py-2 px-4 rounded-md text-white ">Finances</button>
+            <button 
+                (click)="toggleView('squad')" 
+                class="bg-gradient-to-r from-blue-800 to-blue-950 py-2 px-4 rounded-md text-white"
+            >
+                Squad
+            </button>
+            <button 
+                (click)="toggleView('finance')" 
+                class="bg-gradient-to-r from-blue-800 to-blue-950 py-2 px-4 rounded-md text-white"
+            >
+                Finances
+            </button>
         </div>
-    
-        <div *ngIf="showSquad" class=" mt-4 grid max-w-[90%] mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+        <div 
+            *ngIf="showSquad" 
+            class="mt-4 grid max-w-[90%] mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+        >
             <div *ngFor="let player of players">
                 <app-player-card [player]="player"></app-player-card>
             </div>
         </div>
-        
 
-        <div *ngIf="showFinance" class="mt-6 p-6 mx-auto text-black overflow-x-auto">
-            <table class="min-w-full bg-white shadow-md rounded-lg rounded-tr-lg  border-spacing-2">
+        <div 
+            *ngIf="showFinance" 
+            class="mt-6 p-6 mx-auto text-black overflow-x-auto"
+        >
+            <table class="min-w-full bg-white shadow-md rounded-lg border-spacing-2">
                 <thead class="bg-gray-900 text-white">
                     <tr>
                         <th class="px-6 py-3 rounded-tl-lg">Finance Id</th>
-                        
                         <th class="px-6 py-3">Transaction Type</th>
                         <th class="px-6 py-3">Amount</th>
                         <th class="px-6 py-3">Date of Transaction</th>
                         <th class="px-6 py-3">Details</th>
                     </tr>
                 </thead>
-                
                 <tbody>
-                    <tr *ngFor="let finance of finances" class="odd:bg-gray-100 even:bg-white hover:bg-gray-200">
+                    <tr 
+                        *ngFor="let finance of finances" 
+                        class="odd:bg-gray-100 even:bg-white hover:bg-gray-200"
+                    >
                         <td class="border border-gray-300 px-4 py-4">{{ finance.financeId }}</td>
-                
                         <td class="border border-gray-300 px-4 py-4">{{ finance.transactionType }}</td>
                         <td class="border border-gray-300 px-4 py-4">{{ finance.amount }}</td>
                         <td class="border border-gray-300 px-4 py-4">{{ finance.date | date:'medium' }}</td>
                         <td class="border border-gray-300 px-4 py-4">{{ finance.details }}</td>
-                      
                     </tr>
                 </tbody>
             </table>
-            <p *ngIf = "finances.length < 1" class="text-3xl text-black mt-10 mx-auto font-semibold text-center my-auto "> No Records Available</p>
+            <p 
+                *ngIf="finances.length < 1" 
+                class="text-3xl text-black mt-10 mx-auto font-semibold text-center"
+            >
+                No Records Available
+            </p>
         </div>
-    
-        
     </div>
-    
 </div>

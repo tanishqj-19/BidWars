@@ -1,22 +1,38 @@
-<div class="max-w-xs mx-auto bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
-    <div class="relative">
+<div class="max-w-xs mx-auto bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+  <!-- Image Section -->
+  <div class="relative">
       <img [src]="imgPath" alt="Player Image" class="w-full h-60 object-top rounded-t-lg">
-      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 via-transparent to-transparent p-4">
-        <h2 class="text-xl font-bold text-white">{{ player.name }}</h2>
-        <p class="text-sm text-gray-200">Player Age: {{ player.age }} years</p>
+      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+          <h2 class="text-2xl font-bold text-white">{{ player.name }}</h2>
+          <p class="text-sm text-gray-300">Player Age: {{ player.age }} years</p>
       </div>
-    </div>
-    <div class="p-4">
-      <p class="text-gray-700 mb-1">Start Time: {{ auction.startTime | date: 'short' }}</p>
-      <p class="text-gray-700 mb-1">End Time: {{ auction.endTime | date: 'short' }}</p>
-      <p class="text-gray-700 mb-1">{{displayText}} <span class="font-bold">{{ timeRemaining }}</span></p>
-      <p class="text-gray-700 mb-1">Current Bid: {{ currentBidAmount | currency:'INR' }}</p>
-      <p *ngIf = "teamName != ''" class="text-gray-700 mb-1">Current Bidder: {{ teamName }}</p>  
-      <button *ngIf="auction.status == 'Ongoing' && UserRole == 'Team Manager'"
-              (click)="placeBid()" 
-              class="mt-4 bg-gradient-to-r from-gray-800 to-blue-950 text-white py-2 px-4 rounded-full hover:from-gray-400 hover:to-blue-950">
-        Place Bid
-      </button>
-    </div>
   </div>
+  <!-- Card Content -->
+  <div class="p-6">
+      <p class="text-gray-700 mb-2">
+          <span class="font-semibold">Start Time:</span> {{ auction.startTime | date: 'short' }}
+      </p>
+      <p class="text-gray-700 mb-2">
+          <span class="font-semibold">End Time:</span> {{ auction.endTime | date: 'short' }}
+      </p>
+      <p class="text-gray-700 mb-2">
+          {{ displayText }} <span class="font-semibold text-blue-600">{{ timeRemaining }}</span>
+      </p>
+      <p class="text-gray-700 mb-2">
+          <span class="font-semibold">Current Bid:</span> {{ currentBidAmount | currency: 'INR' }}
+      </p>
+      <p *ngIf="teamName != ''" class="text-gray-700 mb-2">
+          <span class="font-semibold">Current Bidder:</span> {{ teamName }}
+      </p>
+      <!-- Place Bid Button -->
+      <button 
+          *ngIf="auction.status == 'Ongoing' && UserRole == 'Team Manager'"
+          (click)="placeBid()" 
+          class="mt-4 w-full bg-gradient-to-r from-gray-800 to-blue-800 text-white font-semibold py-2 px-4 rounded-full hover:from-gray-700 hover:to-blue-600 transition-all"
+      >
+          Place Bid
+      </button>
+  </div>
+</div>
+
   

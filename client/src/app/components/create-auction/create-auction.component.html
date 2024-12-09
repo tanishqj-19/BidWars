@@ -1,7 +1,13 @@
 <div class="container mx-auto p-4">
   <header class="text-center mb-3 flex items-center justify-center space-x-4">
-      <button (click)="toggleForm()" *ngIf = "UserRole == 'Admin' || UserRole == 'Auctioneer'"
-      class="bg-gradient-to-r from-gray-800 to-blue-950 text-white px-4 py-2  lg:px-12 md:px-10 rounded-lg hover:from-blue-600 hover:to-blue-950">Create</button>
+    <button 
+        (click)="toggleForm()" 
+        *ngIf="UserRole == 'Admin' || UserRole == 'Auctioneer'"
+        class="px-4 py-2 font-medium text-gray-600 transition-colors duration-200 sm:px-6  rounded-xl hover:bg-gray-50"  >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+        </svg>
+    </button>
   </header>
 
   <div *ngIf="showForm" class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
